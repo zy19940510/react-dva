@@ -236,6 +236,14 @@ FakesAssemblies/
 .ntvs_analysis.dat
 node_modules/
 
+# production
+www/dist
+
+# misc
+.DS_Store
+npm-debug.log*
+
+/coverage
 # Typescript v1 declaration files
 typings/
 
