@@ -15,7 +15,7 @@ var loginctrl = require("./controllers/loginctrl.js");
 //设置模板引擎
 // app.set("view engine", "ejs");
 
-//使用session，这里的语句照抄，不要求懂：
+//使用session
 app.set('trust proxy', 1);
 app.use(session({
     resave: false,

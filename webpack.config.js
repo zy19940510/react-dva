@@ -47,7 +47,10 @@ module.exports = {
                     path.resolve(__dirname, "node_modules")
                 ],
                 loader: 'ts-loader' 
-            }
+            },
+            {
+                test: /\.svg/, loader: 'svg-url-loader'
+            },
         ]
     },
     
