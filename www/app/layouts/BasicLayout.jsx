@@ -31,9 +31,7 @@ export class BasicLayout extends Component {
     this.props.dispatch({"type" : "login/checklogin"})
   }
   render() {
-    // const session = this.props.dispatch({"type" : "login/checklogin"})
-    // console.log(session)
-    // console.log(this.props.login)
+    
     return (
       <div>
         <h1>哈哈</h1>
