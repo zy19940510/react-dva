@@ -21,7 +21,7 @@ app.use(session({
     resave: false,
     secret: 'qasystem',
     saveUninitialized: true,
-    cookie: { maxAge: 86400 }	//session能够存储的时间
+    cookie: { maxAge: 864000 }	//session能够存储的时间
 }));
 
 //数据库
