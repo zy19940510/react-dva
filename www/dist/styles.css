@@ -1,0 +1,476 @@
+/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
+/* stylelint-disable declaration-bang-space-before */
+/* stylelint-disable declaration-bang-space-before */
+.main {
+  width: 368px;
+  margin: 0 auto;
+}
+.main .tabs {
+  padding: 0 2px;
+  margin: 0 -2px;
+}
+.main .tabs .ant-tabs-tab {
+  font-size: 16px;
+  line-height: 24px;
+}
+.main .tabs .ant-input-affix-wrapper .ant-input:not(:first-child) {
+  padding-left: 34px;
+}
+.main .ant-tabs .ant-tabs-bar {
+  border-bottom: 0;
+  margin-bottom: 24px;
+  text-align: center;
+}
+.main .ant-form-item {
+  margin-bottom: 24px;
+}
+.main .prefixIcon {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.25);
+}
+.main .getCaptcha {
+  display: block;
+  width: 100%;
+}
+.main .additional {
+  text-align: left;
+}
+.main .additional .forgot {
+  float: right;
+}
+.main .additional .submit {
+  width: 100%;
+  margin-top: 24px;
+}
+.main .additional .ant-form-item-control {
+  line-height: 22px;
+}
+.main .iconAlipay,
+.main .iconTaobao,
+.main .iconWeibo {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background: url('https://gw.alipayobjects.com/zos/rmsportal/itDzjUnkelhQNsycranf.svg');
+  margin-left: 16px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.main .iconAlipay {
+  background-position: -24px 0;
+}
+.main .iconAlipay:hover {
+  background-position: 0 0;
+}
+.main .iconTaobao {
+  background-position: -24px -24px;
+}
+.main .iconTaobao:hover {
+  background-position: 0 -24px;
+}
+.main .iconWeibo {
+  background-position: -24px -48px;
+}
+.main .iconWeibo:hover {
+  background-position: 0 -48px;
+}
+.main .other {
+  text-align: left;
+  margin-top: 24px;
+  line-height: 22px;
+}
+.main .other .register {
+  float: right;
+}
+/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
+/* stylelint-disable declaration-bang-space-before */
+/* stylelint-disable declaration-bang-space-before */
+.main {
+  width: 368px;
+  margin: 0 auto;
+}
+.main .ant-form-item {
+  margin-bottom: 24px;
+}
+.main h3 {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.main .mobileGroup .ant-form-item {
+  margin-bottom: 0;
+  vertical-align: top;
+}
+.main .mobileGroup .ant-form-item:first-child .ant-select-selection {
+  border-right-width: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.main .mobileGroup .ant-form-item:last-child .ant-input {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.main .getCaptcha {
+  display: block;
+  width: 100%;
+}
+.main .submit {
+  width: 50%;
+}
+.main .login {
+  float: right;
+  line-height: 32px;
+}
+.success,
+.warning,
+.error {
+  transition: color .3s;
+}
+.success {
+  color: #00a854;
+}
+.warning {
+  color: #ffbf00;
+}
+.error {
+  color: #f04134;
+}
+.progress-pass > .progress .ant-progress-bg {
+  background-color: #ffbf00;
+}
+div {
+  color: black;
+}
+.ant-table {
+  overflow: visible;
+}
+.ant-table table {
+  overflow: visible;
+}
+.tab_ctrl_box a,
+.a_list_ctrl_box a,
+.range_ctrl_box a {
+  margin-right: 16px;
+}
+.tab_ctrl_box .cur,
+.a_list_ctrl_box .cur {
+  color: red;
+}
+.td_h {
+  background: #efefef !important;
+  width: 100px;
+}
+.ant-table-tbody > tr.ant-table-row-hover > td,
+.ant-table-tbody > tr:hover > td,
+.ant-table-thead > tr.ant-table-row-hover > td,
+.ant-table-thead > tr:hover > td {
+  background: transparent;
+}
+.more_box {
+  border: 1px solid #f8f5f5;
+  margin-top: 10px;
+  padding: 10px;
+}
+.more_box dl {
+  overflow: hidden;
+}
+.more_box dt {
+  float: left;
+  width: 80px;
+  line-height: 30px;
+}
+.more_box dd {
+  line-height: 30px;
+  float: left;
+}
+.range_ctrl_box .examples {
+  float: left;
+  line-height: 30px;
+}
+.range_ctrl_box .slider {
+  width: 300px;
+  float: left;
+  line-height: 30px;
+}
+.range_ctrl_box .c2 {
+  padding-left: 20px;
+}
+.select_ctrl_box {
+  position: relative;
+  float: left;
+  margin-right: 10px;
+}
+.select_ctrl_box .hd {
+  padding: 0 40px 0 10px;
+  line-height: 30px;
+  height: 30px;
+  border: 1px solid #ddd;
+  position: relative;
+  box-sizing: content-box;
+}
+.select_ctrl_box .hd::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  right: 13px;
+  width: 10px;
+  height: 10px;
+  border-top: 1px solid #424242;
+  border-right: 1px solid #424242;
+  transform: rotate(135deg);
+}
+.select_ctrl_box .hd.open::before {
+  transform: rotate(-45deg);
+  top: 12px;
+}
+.select_ctrl_box .bd {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  height: 190px;
+  border: 1px solid #eee;
+  background: white;
+  overflow: hidden;
+  box-sizing: content-box;
+  z-index: 9999;
+}
+.select_ctrl_box .bd ul {
+  float: left;
+  width: 80px;
+  padding-top: 10px;
+}
+.select_ctrl_box .bd ul li {
+  height: 30px;
+  padding: 0 10px;
+}
+.select_ctrl_box .bd ul li.cur a {
+  color: red;
+}
+.ant-table-tbody > tr > td {
+  padding: 7px 8px;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+.cl {
+  clear: both;
+}
+.albumWraper {
+  width: 100%;
+  height: 100%;
+  background: black;
+}
+.albumWraper .rightPart {
+  position: absolute;
+  right: 0;
+  top: 0;
+  box-sizing: border-box;
+  width: 296px;
+  height: 100%;
+  background: #333;
+  padding-left: 10px;
+  padding-right: 6px;
+}
+.albumWraper .rightPart h1 {
+  font-size: 30px;
+  color: white;
+  padding: 10px 0;
+}
+.albumWraper .rightPart h3 {
+  color: white;
+  font-size: 16px;
+  padding: 0 0 30px;
+}
+.albumWraper .rightPart .picker .album {
+  list-style: none;
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+.albumWraper .rightPart .picker .album li {
+  float: left;
+  width: 30%;
+  box-sizing: border-box;
+  height: 40px;
+  border: 1px solid white;
+  text-align: center;
+  line-height: 40px;
+  color: white;
+  font-size: 14px;
+  margin-right: 3%;
+}
+.albumWraper .rightPart .picker .album li.cur {
+  background: #bebdba;
+  color: #333;
+}
+.albumWraper .rightPart .picker .color {
+  list-style: none;
+}
+.albumWraper .rightPart .picker .color li {
+  float: left;
+  width: 20px;
+  height: 20px;
+  background-color: orange;
+  margin-right: 6px;
+}
+.albumWraper .rightPart .picker .color li.cur {
+  border: 2px solid red;
+  margin-top: -2px;
+}
+.albumWraper .picNav {
+  margin-top: 30px;
+  overflow: hidden;
+  padding: 10px 4px;
+}
+.albumWraper .picNav .unit {
+  width: 8000px;
+  position: relative;
+  left: 0;
+}
+.albumWraper .picNav .unit ul {
+  list-style: none;
+  float: left;
+  width: 280px;
+  margin-right: 10px;
+}
+.albumWraper .picNav .unit ul li {
+  width: 49%;
+  float: left;
+  margin-right: 2%;
+  margin-bottom: 6px;
+  position: relative;
+  background: url("/images/loading.gif") no-repeat center center;
+  height: 100px;
+  overflow: hidden;
+}
+.albumWraper .picNav .unit ul li::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110%;
+  background: rgba(0, 0, 0, 0.6);
+  transition: all 0.4s ease 0s;
+  vertical-align: middle;
+}
+.albumWraper .picNav .unit ul li.cur::before {
+  opacity: 0;
+}
+.albumWraper .picNav .unit ul li:nth-child(2n) {
+  margin-right: 0px;
+}
+.albumWraper .picNav .unit ul li img {
+  width: 100%;
+}
+.albumWraper .picNav ol {
+  list-style: none;
+  padding-top: 4px;
+  overflow: hidden;
+}
+.albumWraper .picNav ol li {
+  float: left;
+  height: 14px;
+  cursor: pointer;
+  background: skyblue;
+  border-right: 4px solid #333;
+  box-sizing: border-box;
+}
+.albumWraper .picNav ol li.cur {
+  background: orange;
+}
+.albumWraper .picNav ol li:last-child {
+  border-right: none;
+}
+.albumWraper .bigimgwrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  padding-right: 296px;
+  box-sizing: border-box;
+}
+.albumWraper .bigimgwrap .inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: url("/images/loading.gif") no-repeat center center;
+}
+.albumWraper .bigimgwrap .inner .bigimg {
+  max-height: 90%;
+  max-width: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.albumWraper .bigimgwrap .inner .rightBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  cursor: url(/images/picture-cursor-right.cur), auto;
+}
+.albumWraper .bigimgwrap .inner .leftBtn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  cursor: url(/images/picture-cursor-left.cur), auto;
+}
+html,
+body,
+#app-container {
+  height: 100%;
+}
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.globalSpin {
+  width: 100%;
+  margin: 40px 0 !important;
+}
+.bar {
+  width: 600px;
+  height: 50px;
+  background: orange;
+}
+.bar p {
+  width: 20px;
+  height: 50px;
+  background: white;
+  border: 1px solid #333;
+}
+.myul {
+  overflow: hidden;
+}
+.myul li {
+  float: left;
+  width: 140px;
+  height: 30px;
+  background: orange;
+  margin-left: 20px;
+}
+.xuanfu .inner {
+  position: fixed;
+  width: 80%;
+  height: 90%;
+  background: orange;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999999;
+}
+.xuanfu .cover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}

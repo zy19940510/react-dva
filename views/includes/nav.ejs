@@ -1,0 +1,37 @@
+<div class="container-fluid">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="/">考拉问答平台</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item <%= column == 'index' && 'active' %>">
+					<a class="nav-link" href="/">首页</a>
+				</li>
+			</ul>
+			<div class="my-2 my-lg-0">
+				<ul class="navbar-nav mr-auto">
+					<% if(!login){ %>
+						<li class="nav-item <%= column == 'login' && 'active' %>">
+							<a class="nav-link" href="/login">登录</a>
+						</li>
+						<li class="nav-item <%= column == 'regist' && 'active' %>">
+							<a class="nav-link" href="/regist">注册</a>
+						</li>
+					<% } else {%>
+						<li><img src="" width="40" height="40" id="avatar_small_pic"></li>
+						<li><a class="nav-link"><span id="nicknamespan"></span>（<%=email%>）</a></li>
+						<li>
+							<a class="nav-link <%= column == 'info' && 'active' %>" href="/info">更改资料</a>
+						</li>
+					<% } %>
+				</ul>
+				<!-- 下面这个span是登录是否成功的暗记 -->
+				<span id="login_hint" style="display:none"><%= login ? 1 : -1 %></span>
+				<span id="email_hint" style="display:none"><%= login ? email : -1 %></span>
+			</div>
+		</div>
+	</nav>
+</div>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>个人资料修改 - 考拉问答平台</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css"></head>
+	<style type="text/css">
+		@media (min-width: 576px){
+			.modal-dialog {
+				max-width: 700px;
+			}
+		}
+	</style>
+	<% include ./includes/head_common.ejs %>
+<body>
+	<!-- 导航条开始 -->
+	<% include ./includes/nav.ejs %>
+	<!-- 导航条结束 -->
+
+	<div class="container mt-4">
+		<h1>个人资料修改</h1>
+		<hr>
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="form-group row">
+					<div class="col-sm-3 text-right">
+						<label>Email：</label>
+					</div>
+					<div class="col-sm-9 p-0">
+						<input type="text" disabled class="form-control" value="<%=email%>"/>
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-sm-3 text-right">
+						<label>昵称：</label>
+					</div>
+					<div class="col-sm-9 p-0">
+						<input type="text" class="form-control" id="inputNickname"/>
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-sm-3 text-right">
+						<label>一句话简介：</label>
+					</div>
+					<div class="col-sm-9 p-0">
+						<input type="text" class="form-control" id="inputIntroduction"/>
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-sm-3 text-right">
+						<label>头像：</label>
+					</div>
+					<div class="col-sm-9 p-0">
+						<img src="" id="imgAvatar" width="100" hegiht="100">
+						<button data-target="#avatarModal" data-toggle="modal">更改头像</button>
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-sm-3 text-right">
+						 
+					</div>
+					<div class="col-sm-9 p-0">
+						<button class="btn btn-success" id="btnSubmit" >提交</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 弹出层开始，模态框 -->
+	<div class="modal fade" id="avatarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">更改头像</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<iframe src="/form" frameborder="0" width="680" height="366"></iframe>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 弹出层结束 -->
+ 
+ 	<script type="text/javascript">
+ 		(function(){
+ 			//页面一上来就拉取数据！
+ 			function fetchdata(){
+	 			$.ajax({
+	 				"url" : "/info" , 
+	 				"type" : "CHECKOUT" , 
+	 				"data" : {
+	 					"email" : "<%= email %>"
+	 				},
+	 				"success" : function(data){
+	 					//将拉取的数据显示在文本框汇总
+	 					$("#inputNickname").val(data.nickname);
+	 					$("#inputIntroduction").val(data.introduction);
+	 					$("#imgAvatar").attr("src" , data.avatar);
+	 				}
+	 			});
+	 		}
+
+	 		window.fetchdata = fetchdata;
+
+	 		fetchdata();
+
+ 			//点击提交按钮
+ 			$("#btnSubmit").click(function(){
+ 				$.post("/info" , {
+ 					"nickname" : $("#inputNickname").val(),
+ 					"introduction" : $("#inputIntroduction").val()
+ 				},function(data){
+ 					if(data.result == 1){
+ 						alert("资料修改成功！");
+ 						window.location = "/";
+ 					}
+ 				});
+ 			});
+ 		})();
+ 	</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.maoni{
+			font-size: 80px;
+			line-height: 60px;
+			text-align: center;
+			color:white;
+			width:80px;
+			height: 80px;
+			background-color: orange;
+			cursor: pointer;
+		}
+	</style>
+	<% include ./includes/head_common.ejs %>
+</head>
+<body>
+	<div>
+		<form id="myform" action="/fatupian?id=<%=id%>" method="post" enctype="multipart/form-data">
+			<input type="file" id="tu" name="tu" style="display:none;">
+		</form>
+		<div class="maoni" id="jiahaobtn">
+			+
+		</div>
+	</div>
+	<script type="text/javascript">
+		$("#jiahaobtn").click(function(){
+			$("#tu").trigger("click");
+		});
+
+		$("input[name=tu]").bind("change" , function(){
+			//调菊花
+			window.parent.uping<%=id%>();
+			
+			$("#myform")[0].submit();
+		});
+	</script>
+</body>
+</html>

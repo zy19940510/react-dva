@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>登录 - 考拉问答平台</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css"></head>
+	<% include ./includes/head_common.ejs %>
+<body>
+	<!-- 导航条开始 -->
+	<% include ./includes/nav.ejs %>
+	<!-- 导航条结束 -->
+
+	<div class="container mt-4">
+		<h1>登录</h1>
+		<hr>
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="form-group row">
+					<div class="col-sm-3 text-right">
+						<label for="inputEmail">Email：</label>
+					</div>
+					<div class="col-sm-9 p-0">
+						<input type="email" class="form-control" id="inputEmail" autofocus />
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-sm-3 text-right">
+						<label for="exampleInputPassword1">密码：</label>
+					</div>
+					<div class="col-sm-9 p-0">
+						<input type="password" class="form-control" id="inputPassword" />
+					</div>
+				</div>
+				 
+				<div class="form-group row">
+					<div class="col-sm-3 text-right">
+						 
+					</div>
+					<div class="col-sm-9 p-0">
+						<button class="btn btn-primary" id="loginbtn">登录</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="js/login.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.addbtn{
+			width:160px;
+			height:160px;
+			background-color: gold;
+			color:white;
+			font-size: 160px;
+			text-align: center;
+			line-height: 140px;
+			margin: 0 auto;
+			cursor: pointer;
+		}
+		.addbtn:hover{
+			background-color: yellow;
+		}
+		p{
+			text-align: center;
+		}
+	</style>
+	<% include ./includes/head_common.ejs %>
+</head>
+<body>
+	<div class="addbtn" id="addbtn">+</div>
+	<p>请选择一张图片上传</p>
+
+	<form id="myform" action="/uploadavatar" method="post" enctype="multipart/form-data">
+		<input id="filectrl" type="file" name="avatar" hidden/>
+	</form>
+
+	 
+	<script type="text/javascript">
+		//点击addbtn的时候做的事情
+		$("#addbtn").click(function(){
+			//让filectrl这个file控件模拟触发click事件
+			$("#filectrl").trigger("click");
+		});
+
+		//当用户选择了一张图片之后，真的上传图片
+		$("#filectrl").bind("change" , function(){
+			//提交表单不就是上传了么？
+			$("#myform")[0].submit();
+		});
+	</script>
+</body>
+</html>

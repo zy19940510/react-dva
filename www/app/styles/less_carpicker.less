@@ -1,0 +1,120 @@
+div{
+    color:black;
+}
+.ant-table{
+    overflow: visible;
+}
+.ant-table table{
+    overflow: visible;
+}
+.tab_ctrl_box a , .a_list_ctrl_box a , .range_ctrl_box a{
+    margin-right:16px;
+}
+.tab_ctrl_box .cur , .a_list_ctrl_box .cur{
+    color:red;
+}
+.td_h{
+    background:#efefef !important;
+    width:100px;
+}
+.ant-table-tbody>tr.ant-table-row-hover>td, .ant-table-tbody>tr:hover>td, .ant-table-thead>tr.ant-table-row-hover>td, .ant-table-thead>tr:hover>td{
+    background:transparent;
+}
+.more_box{
+    border:1px solid rgb(248, 245, 245);
+    margin-top:10px;
+    padding:10px;
+
+    dl{
+        overflow:hidden;
+    }
+
+    dt{
+        
+        float: left;
+        width:80px;
+        line-height: 30px;
+    }
+    dd{
+        line-height: 30px;
+        float: left;
+    }
+}
+
+
+.range_ctrl_box{
+    .examples{
+        float: left;
+        line-height: 30px;
+    }
+    .slider{
+        width:300px;
+        float: left;
+        line-height: 30px;
+    }
+    .c2{
+        padding-left:20px;
+    }
+}
+
+.select_ctrl_box{
+    position: relative;
+    float: left;
+    margin-right: 10px;
+    .hd{
+        padding:0 40px 0 10px;
+        line-height: 30px;
+        height:30px;
+        border:1px solid #ddd;
+        position: relative;
+        box-sizing:content-box;
+
+        &::before{
+            content:"";
+            position:absolute;
+            top:6px;
+            right:13px;
+            width:10px;
+            height:10px;
+            border-top:1px solid #424242;
+            border-right:1px solid #424242;
+            transform:rotate(135deg)
+        }
+
+        &.open::before{
+            transform:rotate(-45deg);
+            top:12px;
+        }
+    }
+    
+    .bd{
+        position: absolute;
+        top:30px;
+        left:0;
+        height:190px;
+        border:1px solid #eee;
+        
+        background:white;
+        overflow: hidden;
+        box-sizing:content-box;
+        z-index:9999;
+        
+
+        ul{
+            float: left;
+            width:80px;
+            padding-top:10px;
+            
+            li{
+                height:30px;
+                padding:0 10px;
+                &.cur a{
+                    color:red;
+                }
+            }
+        }
+    }
+}
+.ant-table-tbody>tr>td{
+    padding: 7px 8px;
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>注册 - 考拉问答平台</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css"></head>
+	<style type="text/css">
+		.strengthgrid{
+			background-color: #eee;
+			display: block;
+			width:100%;
+			font-size: 14px;
+			text-align: center;
+		}
+	</style>
+	<% include ./includes/head_common.ejs %>
+<body>
+	<!-- 导航条开始 -->
+	<% include ./includes/nav.ejs %>
+	<!-- 导航条结束 -->
+
+	<div class="container mt-4">
+		<h1>注册</h1>
+		<hr>
+		<div class="row">
+			<div class="col-lg-6">
+				<div class="form-group row">
+					<div class="col-sm-3 text-right">
+						<label for="exampleInputEmail1">Email：</label>
+					</div>
+					<div class="col-sm-9 p-0">
+						<input type="email" class="form-control" id="inputEmail" autofocus />
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-sm-3 text-right">
+						<label for="exampleInputPassword1">密码：</label>
+					</div>
+					<div class="col-sm-9 p-0">
+						<input type="password" class="form-control" id="inputPassword1" />
+						<div class="row ml-1 mt-2" id="strengthbox" style="display:none;">
+							<div class="col-sm-6">
+								<div class="row">
+									<div class="col-sm-3 p-0"><div data-color="red" class="strengthgrid">简单</div></div>
+									<div class="col-sm-3 p-0"><div data-color="orange" class="strengthgrid">一般</div></div>
+									<div class="col-sm-3 p-0"><div data-color="gold" class="strengthgrid">中等</div></div>
+									<div class="col-sm-3 p-0"><div data-color="yellowgreen" class="strengthgrid">安全</div></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-sm-3 text-right">
+						<label for="exampleInputPassword1">重复密码：</label>
+					</div>
+					<div class="col-sm-9 p-0">
+						<input type="password" class="form-control" id="inputPassword2" />
+					</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-sm-3 text-right">
+						 
+					</div>
+					<div class="col-sm-9 p-0">
+						<button class="btn btn-primary" id="submitbtn">注册</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="js/regist.js"></script>
+</body>
+</html>

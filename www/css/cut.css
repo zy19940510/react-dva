@@ -1,0 +1,132 @@
+ 
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.wrap{
+			width:660px;
+			height:360px;
+			position: relative;
+		}
+		.picbox{
+			position: relative;
+		}
+		.cut{
+			position: absolute;
+			top: 0;
+			left:0;
+			width:100px;
+			height:100px;
+			z-index: 3;
+			overflow: hidden;
+		}
+		.mask{
+			position: absolute;
+			width:100%;
+			height:100%;
+			background-color: rgba(0,0,0,.7);
+			top:0;
+			left:0;
+			z-index: 2;
+		}
+		.cut img{
+			position: relative;
+		}
+		.cut .t{
+			width:3000px;
+			height:0;
+			border-top:2px dotted white;
+			position: absolute;
+			top: 0;
+			left:0;
+			animation:move_left 30s linear 0s infinite;
+		}
+		@-webkit-keyframes move_left{
+			from{
+				left:0;
+			}
+			to{
+				left:-1500px;
+			}
+		}
+		.cut .l{
+			width:0;
+			height:3000px;
+			border-left:2px dotted white;
+			position: absolute;
+			top: -1500px;
+			left:0;
+			animation:move_bottom 30s linear 0s infinite;
+		}
+		@-webkit-keyframes move_bottom{
+			from{
+				top:-1500px;
+			}
+			to{
+				top:0;
+			}
+		}
+		.cut .b{
+			width:3000px;
+			height:0px;
+			border-bottom:2px dotted white;
+			position: absolute;
+			bottom: 0px;
+			left:0;
+			animation:move_right 30s linear 0s infinite;
+		}
+		@-webkit-keyframes move_right{
+			from{
+				left:-1500px;
+			}
+			to{
+				left:0;
+			}
+		}
+		.cut .r{
+			width:0;
+			height:3000px;
+			border-right:2px dotted white;
+			position: absolute;
+			top: 0px;
+			right:0px;
+			animation:move_top 30s linear 0s infinite;
+		}
+		@-webkit-keyframes move_top{
+			from{
+				top:0;
+			}
+			to{
+				top:-1500px;
+			}
+		}
+
+		.preview_box{
+			position: absolute;
+			right: 0;
+			top: 0;
+			width:180px;
+		}
+		.preview_box p{
+			margin-bottom: 6px;
+			border:1px solid #ccc;
+			overflow: hidden;
+		}
+		.preview_box p img{
+			position: relative;
+		}
+		.preview_box .big{
+			width:160px;
+			height:160px;
+			border:1px solid #ccc;
+			
+		}
+		.preview_box .medium{
+			width:100px;
+			height:100px;
+		}
+		.preview_box .small{
+			width:60px;
+			height:60px;
+		}
+ 

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>错误 - 考拉问答平台</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css"></head>
+	<% include ./includes/head_common.ejs %>
+<body>
+	<!-- 导航条开始 -->
+	<% include ./includes/nav.ejs %>
+	<!-- 导航条结束 -->
+
+	<div class="container mt-4">
+		<h1>错误！</h1>
+		<hr>
+		<div class="alert alert-warning">
+			错误信息：<%= tip %>
+		</div>
+		<div id="tipbox"><span>5</span>秒后返回首页...</div>
+	</div>
+
+ 
+ 	<script type="text/javascript">
+ 		var a = 5;
+ 		setInterval(function(){
+ 			$("#tipbox span").html(a);
+ 			a--;
+
+ 			if(a < 0){
+ 				window.location = "/";
+ 			}
+ 		},1000);
+ 	</script>
+</body>
+</html>

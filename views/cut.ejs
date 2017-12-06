@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>裁切页面</title>
+	<link rel="stylesheet" href="css/jquery-ui.css">
+	<link rel="stylesheet" href="css/cut.css">
+	<% include ./includes/head_common.ejs %>
+</head>
+<body>
+	<div class="wrap">
+		<div class="picbox" style="width:<%=view_w%>px;height:<%=view_h%>px;">
+			<img src="/uploads/<%= avatarurl %>" width="<%=view_w%>" height="<%=view_h%>" />
+			
+			<div class="cut" id="cut_rect">
+				<img src="/uploads/<%= avatarurl %>" width="<%=view_w%>" height="<%=view_h%>" />
+				<p class="t"></p>
+				<p class="r"></p>
+				<p class="b"></p>
+				<p class="l"></p>
+			</div>
+			
+			<div class="mask"></div>
+		</div>
+
+		<div class="preview_box">
+			<p data-wh="160" class="big"><img src="/uploads/<%= avatarurl %>" width="<%=view_w%>" height="<%=view_h%>" /></p>
+			<p data-wh="100" class="medium"><img src="/uploads/<%= avatarurl %>" width="<%=view_w%>" height="<%=view_h%>" /></p>
+			<p data-wh="60" class="small"><img src="/uploads/<%= avatarurl %>" width="<%=view_w%>" height="<%=view_h%>" /></p>
+			<button class="btn btn-success" id="btncut">裁剪！</button>
+		</div>
+	</div>
+	
+	<script type="text/javascript">
+		(function(){
+			//让小cut块能够被拖拽
+			$("#cut_rect").draggable({
+				"containment" : ".picbox" ,
+				"drag" : function(event , ui){
+					cut_x = ui.position.left;
+					cut_y = ui.position.top;
+					$("#cut_rect img").css({
+						"left" : -cut_x,
+						"top" : -cut_y
+					});
+					setEveryPreiveBox();
+				}	
+			});
+
+			//可以被更改尺寸
+			$("#cut_rect").resizable({
+				"aspectRatio": 1 / 1,
+				"containment" : ".picbox" ,
+				"resize" : function(event , ui){
+					//拖拽的时候改变全局信号量
+					cut_wh = ui.size.width;
+					//调用设置预览图的函数
+					setEveryPreiveBox();
+				}
+			});
+
+			//左边被裁切的图的宽度、高度
+			var source_w = <%=view_w%>;
+			var source_h = <%=view_h%>;
+			//左边裁切框（cutbox）的宽度高度
+			var cut_wh = 100;
+			//左边裁切框（cutbox）的x、y位置
+			var cut_x = 0;
+			var cut_y = 0;
+
+			//调用设置预览图的函数
+		 	setEveryPreiveBox();
+			 
+			//设置预览图
+			function setEveryPreiveBox(){
+				console.log(cut_wh , cut_x , cut_y);
+				//遍历每一个p标签
+				$(".preview_box p").each(function(){
+					//设置img对象
+					$(this).find("img").css({
+						"width" : source_w * $(this).data("wh") / cut_wh ,
+						"height" : source_h * $(this).data("wh") / cut_wh ,
+						"top" : -cut_y * $(this).data("wh") / cut_wh ,
+						"left" : -cut_x * $(this).data("wh") / cut_wh 
+					});
+				});
+			}
+
+
+
+			$("#btncut").click(function(){
+				//计算倍数
+				var rate = <%= origin_w %> / <%= view_w %>;
+				$.post("/cut" , {
+					"w" : cut_wh * rate,
+					"h" : cut_wh * rate, 
+					"x" : cut_x  * rate,
+					"y" : cut_y  * rate
+				},function(data){
+					if(data.result == 1){
+						$("#avatarModal" , window.parent.document).addClass("fade").removeClass("show");
+						$(".modal-backdrop" , window.parent.document).addClass("fade").removeClass('show');
+						window.parent.fetchdata();
+					}
+				});
+			})
+		})();
+	</script>
+</body>
+</html>
