@@ -1,5 +1,5 @@
 import { routerRedux } from 'dva/router';
-import { fakeAccountLogin, fakeMobileLogin } from '../api';
+import { fakeAccountLogin, fakeMobileLogin} from '../api';
 
 export default {
   namespace: 'login',
@@ -49,6 +49,14 @@ export default {
       });
       yield put(routerRedux.push('/user/login'));
     },
+    *checklogin(){
+      const _login = yield fetch("/checklogin").then(data=>data.json())
+      console.log(_login)
+      yield put({
+        type: 'changeshow',
+        payload: _login,
+      });
+    }
   },
 
   reducers: {
@@ -63,6 +71,12 @@ export default {
       return {
         ...state,
         submitting: payload,
+      };
+    },
+    changeshow(state, { payload }) {
+      return {
+        ...state,
+        _login: payload,
       };
     },
   },

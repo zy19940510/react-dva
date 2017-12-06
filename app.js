@@ -40,10 +40,8 @@ app.post("/api/login/account", loginctrl.doLogin);
 app.get("/checklogin",function(req,res){
     var login = req.session.login;
     console.log(login);
-    // console.log(req);
     if(!login){
-        console.log("清闲dengue")
-        // res.send("请先登陆");
+        console.log("请先登陆");
         res.json({"login" : "no"})
     }else{
         console.log("denglule")

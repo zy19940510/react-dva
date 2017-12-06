@@ -79,7 +79,7 @@ dynamic.setDefaultLoadingComponent(() => {
             <Switch>
                 <Route path="/" render={props => <UserLayout {...props} {...passProps} />} />
                 {/* <Route path="/" render={props => <BasicLayout {...props} {...passProps} />} /> */}
-                {/* <Route path="/" exact component={Index} /> */}
+                <Route path="/" exact component={Index} />
             </Switch>
         </Router>
       </LocaleProvider>
