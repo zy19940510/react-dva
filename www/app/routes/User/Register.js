@@ -70,9 +70,9 @@ class Register extends Component {
     e.preventDefault();
     this.props.form.validateFields({ force: true },
       (err, values) => {
-        console.log('====================================');
-        console.log(values);
-        console.log('====================================');
+        // console.log('====================================');
+        // console.log(values);
+        // console.log('====================================');
         if (!err) {
           this.props.dispatch({
             type: 'register/submit',

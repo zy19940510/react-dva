@@ -22,7 +22,7 @@ module.exports = {
                 loader: "babel-loader",
                 options: {
                     presets: ["env" , "react"] ,
-                    plugins: ["transform-object-rest-spread","transform-runtime","dynamic-import-webpack","transform-class-properties"]
+                    plugins: ["transform-decorators-legacy","transform-object-rest-spread","transform-runtime","dynamic-import-webpack","transform-class-properties"]
                 }
             },
             {

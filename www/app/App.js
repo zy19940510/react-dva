@@ -21,7 +21,6 @@ export default class App extends Component {
             var hash = "index";
         }
         
-        console.log(hash);
         return (
             <div>
                 <Layout>

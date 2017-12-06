@@ -15,8 +15,8 @@ export default {
         payload: true,
       });
       const response = yield call(fakeRegister ,  _.payload );
-      yield console.log(response);
-      yield console.log(_)
+      // yield console.log(response);
+      // yield console.log(_)
       yield put({
         type: 'registerHandle',
         payload: response 

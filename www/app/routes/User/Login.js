@@ -51,7 +51,7 @@ class Login extends Component {
     const { type } = this.state;
     this.props.form.validateFields({ force: true },
       (err, values) => {
-        console.log(values);
+        // console.log(values);
         if (!err) {
           this.props.dispatch({
             type: `login/${type}Submit`,
