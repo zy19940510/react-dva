@@ -15,7 +15,7 @@ class Login extends Component {
       count: 0,
       type: 'account',
     }
-    props.checklogin()
+    // props.dispatch({"type" : "login/checklogin"})
   }
 
   componentWillReceiveProps(nextProps) {
@@ -197,10 +197,5 @@ Login = Form.create()(Login);
 export default connect(
   state => ({
     login: state.login,
-  }),
-  (dispatch)=>({
-    checklogin(){
-      dispatch({"type" :"login/checklogin"})
-    }
   })
 )(Login);

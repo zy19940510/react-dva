@@ -1,83 +1,63 @@
-import { routerRedux } from 'dva/router';
-import { fakeAccountLogin, fakeMobileLogin} from '../api';
+import {routerRedux} from 'dva/router';
+import {fakeAccountLogin, fakeMobileLogin, checklogin} from '../api';
 
 export default {
-  namespace: 'login',
+  namespace : 'login',
 
-  state: {
+  state : {
     status: undefined,
+    _login : undefined
   },
 
-  effects: {
-    *accountSubmit({ payload }, { call, put }) {
-      yield put({
-        type: 'changeSubmitting',
-        payload: true,
-      });
+  effects : {
+    *accountSubmit({
+      payload
+    }, {call, put}) {
+      yield put({type: 'changeSubmitting', payload: true});
       const response = yield call(fakeAccountLogin, payload);
-      yield console.log(response);
-      yield put({
-        type: 'changeLoginStatus',
-        payload: response,
-      });
-      yield put({
-        type: 'changeSubmitting',
-        payload: false,
-      });
+      yield put({type: 'changeLoginStatus', payload: response});
+      yield put({type: 'changeSubmitting', payload: false});
     },
-    *mobileSubmit(_, { call, put }) {
-      yield put({
-        type: 'changeSubmitting',
-        payload: true,
-      });
+    *mobileSubmit(_, {call, put}) {
+      yield put({type: 'changeSubmitting', payload: true});
       const response = yield call(fakeMobileLogin);
-      yield put({
-        type: 'changeLoginStatus',
-        payload: response,
-      });
-      yield put({
-        type: 'changeSubmitting',
-        payload: false,
-      });
+      yield put({type: 'changeLoginStatus', payload: response});
+      yield put({type: 'changeSubmitting', payload: false});
     },
-    *logout(_, { put }) {
+    *logout(_, {put}) {
       yield put({
         type: 'changeLoginStatus',
         payload: {
-          status: false,
-        },
+          status: false
+        }
       });
       yield put(routerRedux.push('/user/login'));
     },
-    *checklogin(){
-      const _login = yield fetch("/checklogin").then(data=>data.json())
-      console.log(_login)
-      yield put({
-        type: 'changeshow',
-        payload: _login,
-      });
+    *checklogin(_, {call, put}) {
+      const _login = yield call(checklogin);
+      yield put({type: 'changeshow', payload: _login.login});
     }
   },
 
-  reducers: {
-    changeLoginStatus(state, { payload }) {
+  reducers : {
+    changeLoginStatus(state, {payload}) {
       return {
         ...state,
         status: payload.status,
-        type: payload.type,
+        type: payload.type
       };
     },
-    changeSubmitting(state, { payload }) {
+    changeSubmitting(state, {payload}) {
       return {
         ...state,
-        submitting: payload,
+        submitting: payload
       };
     },
-    changeshow(state, { payload }) {
+    changeshow(state, {payload}) {
       return {
         ...state,
-        _login: payload,
+        _login: payload
       };
-    },
-  },
+    }
+  }
 };

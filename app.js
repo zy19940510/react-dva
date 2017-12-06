@@ -37,7 +37,7 @@ app.post("/api/login/account", loginctrl.doLogin);
 // app.get("/#/user/login",function(req,res){
 //     res.send("请登录,<input type='text'/>")
 // });
-app.get("/checklogin",function(req,res){
+app.get("/api/checklogin",function(req,res){
     var login = req.session.login;
     console.log(login);
     if(!login){

@@ -63,8 +63,8 @@ dynamic.setDefaultLoadingComponent(() => {
   function RouterConfig({ history, app }) {
     const navData = getNavData(app);
     const UserLayout = getLayout(navData, 'UserLayout').component;
-    // const BasicLayout = getLayout(navData, 'BasicLayout').component;
-  
+    const BasicLayout = getLayout(navData, 'BasicLayout').component;
+    
     const passProps = {
       app,
       navData,
@@ -77,9 +77,9 @@ dynamic.setDefaultLoadingComponent(() => {
       <LocaleProvider locale={zhCN}>
         <Router history={history}>
             <Switch>
-                <Route path="/" render={props => <UserLayout {...props} {...passProps} />} />
-                {/* <Route path="/" render={props => <BasicLayout {...props} {...passProps} />} /> */}
-                <Route path="/" exact component={Index} />
+                <Route path="/user" render={props => <UserLayout {...props} {...passProps} />} />
+                <Route path="/" exact render={props => <BasicLayout {...props} {...passProps} />} />
+                {/* <Route path="/api" exact component={Index} /> */}
             </Switch>
         </Router>
       </LocaleProvider>

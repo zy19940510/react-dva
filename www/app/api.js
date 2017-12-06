@@ -48,7 +48,9 @@ export async function queryTags() {
   return request('/api/tags');
 }
 
-
+export async function checklogin() {
+  return request('/api/checklogin');
+}
 
 export async function queryBasicProfile() {
   return request('/api/profile/basic');

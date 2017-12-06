@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'dva';
 import { Link, Route } from 'dva/router';
 import DocumentTitle from 'react-document-title';
 import { Icon } from 'antd';
@@ -18,10 +19,15 @@ import styles from '../styles/UserLayout.less';
 
 const copyright = <div>Copyright <Icon type="copyright" /> 2017 蚂蚁金服体验技术部出品</div>;
 
-class UserLayout extends React.PureComponent {
+class UserLayout extends React.Component {
+  constructor(props){
+    super()
+    // props.dispatch({"type" : "login/checklogin"})
+  }
     static childContextTypes ={
       location: PropTypes.object,
 }
+  
   getChildContext() {
     const { location } = this.props;
     return { location };
@@ -71,4 +77,8 @@ class UserLayout extends React.PureComponent {
   }
 }
 
-export default UserLayout;
+export default connect(
+  state => ({
+    login: state.login,
+  })
+)(UserLayout);

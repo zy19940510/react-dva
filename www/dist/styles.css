@@ -1,142 +1,3 @@
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable declaration-bang-space-before */
-/* stylelint-disable declaration-bang-space-before */
-.main {
-  width: 368px;
-  margin: 0 auto;
-}
-.main .tabs {
-  padding: 0 2px;
-  margin: 0 -2px;
-}
-.main .tabs .ant-tabs-tab {
-  font-size: 16px;
-  line-height: 24px;
-}
-.main .tabs .ant-input-affix-wrapper .ant-input:not(:first-child) {
-  padding-left: 34px;
-}
-.main .ant-tabs .ant-tabs-bar {
-  border-bottom: 0;
-  margin-bottom: 24px;
-  text-align: center;
-}
-.main .ant-form-item {
-  margin-bottom: 24px;
-}
-.main .prefixIcon {
-  font-size: 12px;
-  color: rgba(0, 0, 0, 0.25);
-}
-.main .getCaptcha {
-  display: block;
-  width: 100%;
-}
-.main .additional {
-  text-align: left;
-}
-.main .additional .forgot {
-  float: right;
-}
-.main .additional .submit {
-  width: 100%;
-  margin-top: 24px;
-}
-.main .additional .ant-form-item-control {
-  line-height: 22px;
-}
-.main .iconAlipay,
-.main .iconTaobao,
-.main .iconWeibo {
-  display: inline-block;
-  width: 24px;
-  height: 24px;
-  background: url('https://gw.alipayobjects.com/zos/rmsportal/itDzjUnkelhQNsycranf.svg');
-  margin-left: 16px;
-  vertical-align: middle;
-  cursor: pointer;
-}
-.main .iconAlipay {
-  background-position: -24px 0;
-}
-.main .iconAlipay:hover {
-  background-position: 0 0;
-}
-.main .iconTaobao {
-  background-position: -24px -24px;
-}
-.main .iconTaobao:hover {
-  background-position: 0 -24px;
-}
-.main .iconWeibo {
-  background-position: -24px -48px;
-}
-.main .iconWeibo:hover {
-  background-position: 0 -48px;
-}
-.main .other {
-  text-align: left;
-  margin-top: 24px;
-  line-height: 22px;
-}
-.main .other .register {
-  float: right;
-}
-/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
-/* stylelint-disable declaration-bang-space-before */
-/* stylelint-disable declaration-bang-space-before */
-.main {
-  width: 368px;
-  margin: 0 auto;
-}
-.main .ant-form-item {
-  margin-bottom: 24px;
-}
-.main h3 {
-  font-size: 16px;
-  margin-bottom: 20px;
-}
-.main .mobileGroup .ant-form-item {
-  margin-bottom: 0;
-  vertical-align: top;
-}
-.main .mobileGroup .ant-form-item:first-child .ant-select-selection {
-  border-right-width: 0;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-.main .mobileGroup .ant-form-item:last-child .ant-input {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
-.main .getCaptcha {
-  display: block;
-  width: 100%;
-}
-.main .submit {
-  width: 50%;
-}
-.main .login {
-  float: right;
-  line-height: 32px;
-}
-.success,
-.warning,
-.error {
-  transition: color .3s;
-}
-.success {
-  color: #00a854;
-}
-.warning {
-  color: #ffbf00;
-}
-.error {
-  color: #f04134;
-}
-.progress-pass > .progress .ant-progress-bg {
-  background-color: #ffbf00;
-}
 div {
   color: black;
 }
@@ -473,4 +334,143 @@ body {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
+}
+/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
+/* stylelint-disable declaration-bang-space-before */
+/* stylelint-disable declaration-bang-space-before */
+.main {
+  width: 368px;
+  margin: 0 auto;
+}
+.main .tabs {
+  padding: 0 2px;
+  margin: 0 -2px;
+}
+.main .tabs .ant-tabs-tab {
+  font-size: 16px;
+  line-height: 24px;
+}
+.main .tabs .ant-input-affix-wrapper .ant-input:not(:first-child) {
+  padding-left: 34px;
+}
+.main .ant-tabs .ant-tabs-bar {
+  border-bottom: 0;
+  margin-bottom: 24px;
+  text-align: center;
+}
+.main .ant-form-item {
+  margin-bottom: 24px;
+}
+.main .prefixIcon {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.25);
+}
+.main .getCaptcha {
+  display: block;
+  width: 100%;
+}
+.main .additional {
+  text-align: left;
+}
+.main .additional .forgot {
+  float: right;
+}
+.main .additional .submit {
+  width: 100%;
+  margin-top: 24px;
+}
+.main .additional .ant-form-item-control {
+  line-height: 22px;
+}
+.main .iconAlipay,
+.main .iconTaobao,
+.main .iconWeibo {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background: url('https://gw.alipayobjects.com/zos/rmsportal/itDzjUnkelhQNsycranf.svg');
+  margin-left: 16px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.main .iconAlipay {
+  background-position: -24px 0;
+}
+.main .iconAlipay:hover {
+  background-position: 0 0;
+}
+.main .iconTaobao {
+  background-position: -24px -24px;
+}
+.main .iconTaobao:hover {
+  background-position: 0 -24px;
+}
+.main .iconWeibo {
+  background-position: -24px -48px;
+}
+.main .iconWeibo:hover {
+  background-position: 0 -48px;
+}
+.main .other {
+  text-align: left;
+  margin-top: 24px;
+  line-height: 22px;
+}
+.main .other .register {
+  float: right;
+}
+/* stylelint-disable at-rule-empty-line-before,at-rule-name-space-after,at-rule-no-unknown */
+/* stylelint-disable declaration-bang-space-before */
+/* stylelint-disable declaration-bang-space-before */
+.main {
+  width: 368px;
+  margin: 0 auto;
+}
+.main .ant-form-item {
+  margin-bottom: 24px;
+}
+.main h3 {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.main .mobileGroup .ant-form-item {
+  margin-bottom: 0;
+  vertical-align: top;
+}
+.main .mobileGroup .ant-form-item:first-child .ant-select-selection {
+  border-right-width: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.main .mobileGroup .ant-form-item:last-child .ant-input {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.main .getCaptcha {
+  display: block;
+  width: 100%;
+}
+.main .submit {
+  width: 50%;
+}
+.main .login {
+  float: right;
+  line-height: 32px;
+}
+.success,
+.warning,
+.error {
+  transition: color .3s;
+}
+.success {
+  color: #00a854;
+}
+.warning {
+  color: #ffbf00;
+}
+.error {
+  color: #f04134;
+}
+.progress-pass > .progress .ant-progress-bg {
+  background-color: #ffbf00;
 }
