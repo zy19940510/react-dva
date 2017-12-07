@@ -214,13 +214,10 @@
 //     }
 // }
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
+import { connect } from 'dva'
 
 export class Index extends Component {
-  static propTypes = {
-    prop: PropTypes
-  }
+  
 
   render() {
     return (
