@@ -13,8 +13,7 @@ import Debounce from 'lodash-decorators/debounce';
 // import NoticeIcon from '../components/NoticeIcon';
 // import GlobalFooter from '../components/GlobalFooter';
 // import NotFound from '../routes/Exception/404';
-import styles from '../styles/BasicLayout.less';
-import logo from '../../images/logo.svg';
+import   '../styles/BasicLayout.less';
 
 const { Header, Sider, Content } = Layout;
 const { SubMenu } = Menu;
@@ -46,7 +45,9 @@ export class BasicLayout extends Component {
   }
   constructor(props){
     super(props)
-    this.menus = props.navData.reduce((arr, current) => arr.concat(current.children), []);
+    this.menus = props.navData.reduce((arr, current) => arr.concat(current.children), []).filter((item)=>{
+      return item.icon!="user"
+    }); //分离user
     this.state = {
       openKeys: this.getDefaultCollapsedSubMenus(props),
     };
@@ -122,6 +123,8 @@ export class BasicLayout extends Component {
     if (!menusData) {
       return [];
     }
+   
+    
     return menusData.map((item) => {
       if (!item.name) {
         return null;
@@ -132,7 +135,7 @@ export class BasicLayout extends Component {
       } else {
         itemPath = `${parentPath}/${item.path || ''}`.replace(/\/+/g, '/');
       }
-      if (item.children && item.children.some(child => child.name)) {
+      if (item.children && item.children.some(child => child.name)&&item.name!="账户") {
         return (
           <SubMenu
             title={
@@ -252,7 +255,7 @@ export class BasicLayout extends Component {
     const { currentUser, collapsed, fetchingNotices, getRouteData } = this.props;
 
     const menu = (
-      <Menu className={styles.menu} selectedKeys={[]} onClick={this.onMenuClick}>
+      <Menu className="menu" selectedKeys={[]} onClick={this.onMenuClick}>
         <Menu.Item disabled><Icon type="user" />个人中心</Menu.Item>
         <Menu.Item disabled><Icon type="setting" />设置</Menu.Item>
         <Menu.Divider />
@@ -275,12 +278,12 @@ export class BasicLayout extends Component {
           breakpoint="md"
           onCollapse={this.onCollapse}
           width={256}
-          className={styles.sider}
+          className="sider"
         >
-          <div className={styles.logo}>
+          <div className="logo">
             <Link to="/">
-              <img src={logo} alt="logo" />
-              <h1>Ant Design Pro</h1>
+              <img src="../../images/logo.svg" />
+              <h1>张宇的项目</h1>
             </Link>
           </div>
           <Menu
@@ -295,13 +298,13 @@ export class BasicLayout extends Component {
           </Menu>
         </Sider>
         <Layout>
-          <Header className={styles.header}>
+          <Header className="header">
             <Icon
-              className={styles.trigger}
+              className="trigger"
               type={collapsed ? 'menu-unfold' : 'menu-fold'}
               onClick={this.toggle}
             />
-            <div className={styles.right}>
+            <div className="right">
               {/* <HeaderSearch
                 className={`${styles.action} ${styles.search}`}
                 placeholder="站内搜索"
@@ -345,8 +348,8 @@ export class BasicLayout extends Component {
               </NoticeIcon> */}
               {currentUser.name ? (
                 <Dropdown overlay={menu}>
-                  <span className={`${styles.action} ${styles.account}`}>
-                    <Avatar size="small" className={styles.avatar} src={currentUser.avatar} />
+                  <span className="action account">
+                    <Avatar size="small" className="avatar" src={currentUser.avatar} />
                     {currentUser.name}
                   </span>
                 </Dropdown>

@@ -7,7 +7,7 @@ import { Router, Route , NavLink  } from 'dva/router';
 //样式表
 import "./styles/less_carpicker.less";
 import "./styles/less_carshow.less";
-import "./styles/less.less";
+import styles from "./styles/less.less";
 
 export default class App extends Component {
     constructor({children , match}){
@@ -25,7 +25,7 @@ export default class App extends Component {
             <div>
                 <Layout>
                     <Header className="header">
-                        <div className="logo"></div>
+                        <div className="login"></div>
                         <Menu
                             theme="dark"
                             mode="horizontal"

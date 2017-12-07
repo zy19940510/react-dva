@@ -64,7 +64,6 @@ dynamic.setDefaultLoadingComponent(() => {
     const navData = getNavData(app);
     const UserLayout = getLayout(navData, 'UserLayout').component;
     const BasicLayout = getLayout(navData, 'BasicLayout').component;
-    
     const passProps = {
       app,
       navData,

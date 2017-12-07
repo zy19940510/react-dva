@@ -52,11 +52,11 @@ class UserLayout extends React.Component {
           <div className="top">
             <div className="header">
               <Link to="/">
-                <img alt="" className="logo" src="https://gw.alipayobjects.com/zos/rmsportal/NGCCBOENpgTXpBWUIPnI.svg" />
-                <span className="title">Ant Design</span>
+                <img alt="" className="logo" src="../../images/logo.svg" />
+                <span className="title">张宇的项目</span>
               </Link>
             </div>
-            <div className="desc">Ant Design 是西湖区最具影响力的 Web 设计规范</div>
+            <div className="desc">这是一个相当牛逼的项目！</div>
           </div>
           {
             getRouteData('UserLayout').map(item =>

@@ -49,7 +49,11 @@ module.exports = {
                 loader: 'ts-loader' 
             },
             {
-                test: /\.svg/, loader: 'svg-url-loader'
+                test: /\.svg/, 
+                include: [
+                    path.resolve(__dirname, "www/images")
+                ],
+                loader: 'svg-url-loader'
             },
         ]
     },
