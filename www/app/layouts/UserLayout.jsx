@@ -50,9 +50,9 @@ class UserLayout extends React.Component {
       <DocumentTitle title={this.getPageTitle()}>
         <div className="container">
           <div className="top">
-            <div className="header">
+            <div className="headero">
               <Link to="/">
-                <img alt="" className="logo" src="../../images/logo.svg" />
+                <img alt="" className="logoo"/>
                 <span className="title">张宇的项目</span>
               </Link>
             </div>

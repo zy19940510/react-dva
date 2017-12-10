@@ -2,45 +2,45 @@ var formidable = require("formidable");
 var User = require("../models/User.js");
 var path = require("path");
 var url = require("url");
-var gm = require('gm');
+// var gm = require('gm');
 
 //显示info的页面
-exports.showInfo = function(req,res){
-	//如果用户没有登录，那么呈递error错误页面
-	if(!req.session.login){
-		res.render("error" , {
-			"tip" : "请先登录",
-			"column" : "info" , 		//每一个render都要有这个属性
-			"login" : req.session.login ,//每一个render都要有这个属性
-			"email" : req.session.email//每一个render都要有这个属性
-		});
-		return;
-	}
+// exports.showInfo = function(req,res){
+// 	//如果用户没有登录，那么呈递error错误页面
+// 	if(!req.session.login){
+// 		res.render("error" , {
+// 			"tip" : "请先登录",
+// 			"column" : "info" , 		//每一个render都要有这个属性
+// 			"login" : req.session.login ,//每一个render都要有这个属性
+// 			"email" : req.session.email//每一个render都要有这个属性
+// 		});
+// 		return;
+// 	}
  
-	res.render("info" , {
-		"column" : "info" , 		//每一个render都要有这个属性
-		"login" : req.session.login ,//每一个render都要有这个属性
-		"email" : req.session.email//每一个render都要有这个属性
-	});
-};
+// 	res.render("info" , {
+// 		"column" : "info" , 		//每一个render都要有这个属性
+// 		"login" : req.session.login ,//每一个render都要有这个属性
+// 		"email" : req.session.email//每一个render都要有这个属性
+// 	});
+// };
 
 //Ajax提供用户信息
 exports.checkoutInfo = function(req,res){
 	//得到前端提交的email
-	var form = new formidable.IncomingForm();
-	form.parse(req , function(err , fields , files){
-		var email = fields.email;
-
+	// var form = new formidable.IncomingForm();
+	// form.parse(req , function(err , fields , files){
+		var mail=req.session.email
 		//检索数据库
-		User.find({"email" : email} , function(err , results){
+		User.find({"mail" : mail} , function(err , results){
+			
 			res.json({
-				"email" : results[0].email ,
-				"nickname" : results[0].nickname ,
+				"mail" : results[0].mail ,
+				"name" : results[0].nickname ,
 				"introduction" : results[0].introduction ,
 				"avatar" : results[0].avatar
 			});
 		});
-	});
+	// });
 }
 
 //修改用户信息

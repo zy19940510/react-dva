@@ -10,6 +10,7 @@ var session = require("express-session");
 // var mainctrl = require("./controllers/mainctrl.js");
 var registctrl = require("./controllers/registctrl.js");
 var loginctrl = require("./controllers/loginctrl.js");
+var infoctrl = require("./controllers/infoctrl");
  
 
 //设置模板引擎
@@ -32,7 +33,7 @@ app.post("/api/register", registctrl.doRegist);
 app.checkout("/regist", registctrl.checkUserExist);
 // // app.get("/login", loginctrl.showLogin);
 app.post("/api/login/account", loginctrl.doLogin);
-
+app.get("/api/currentUser" , infoctrl.checkoutInfo)
 
 // app.get("/#/user/login",function(req,res){
 //     res.send("请登录,<input type='text'/>")

@@ -227,9 +227,9 @@ class Register extends Component {
               </FormItem>
             </InputGroup>
           </FormItem>
-          <FormItem>
+          {/* <FormItem>
             <Row gutter={8}>
-              <Col span={16}>
+              <Col span={24}>
                 {getFieldDecorator('captcha', {
                   rules: [{
                     required: true, message: '请输入验证码！',
@@ -246,13 +246,13 @@ class Register extends Component {
                   size="large"
                   disabled={count}
                   className="getCaptcha"
-                  onClick={this.onGetCaptcha.bind(this)}
+                  onClick={this.onGetCaptcha.bind(this)} //这里可以做真实短信验证码业务
                 >
                   {count ? `${count} s` : '获取验证码'}
                 </Button>
               </Col>
             </Row>
-          </FormItem>
+          </FormItem> */}
           <FormItem>
             <Button size="large" loading={register.submitting} className="submit" type="primary" htmlType="submit">
               注册
