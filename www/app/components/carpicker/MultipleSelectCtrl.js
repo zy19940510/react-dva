@@ -45,12 +45,19 @@ class MultipleSelectCtrl extends Component {
     }
 
     render() {
+		var cartype = [];
+		var cartypeOptions = [];
+		if(this.props.data){
+			cartype = this.props.data;
+			cartypeOptions= cartype.options
+			// console.log(cartypeOptions.length)
+		}
         //显示列表
         const showlist = () => {
             var ARR = [];
-            for (let i = 0; i < this.props.data.options.length / 6; i++) {
+            for (let i = 0; i < cartypeOptions.length / 6; i++) {
                 var temp = [];
-                let slice_arr = this.props.data.options.slice(i * 6, i * 6 + 6);
+                let slice_arr = cartypeOptions.slice(i * 6, i * 6 + 6);
                 for (let j = 0; j < slice_arr.length; j++) {
                     temp.push(<li key={i * 6 + j}>
                         <label>
@@ -87,7 +94,7 @@ class MultipleSelectCtrl extends Component {
                     className={classnames({ "hd": true, "open": this.state.showBd })}
                     onClick={() => { this.setState({ "showBd": !this.state.showBd }) }}
                 >
-                    {this.props.data.title}
+                    {cartype.title}
                     {" "}: {" "}
                     {
                         value.join(" 或 ")
@@ -95,7 +102,7 @@ class MultipleSelectCtrl extends Component {
                 </div>
                 <div className="bd" style={{
                     "display": this.state.showBd ? "block" : "none",
-                    "width": Math.ceil(this.props.data.options.length / 6) * 80 + "px"
+                    "width": Math.ceil(cartypeOptions.length / 6) * 80 + "px"
                 }}>
                     {
                         showlist()

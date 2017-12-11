@@ -29,11 +29,15 @@ exports.checkoutInfo = function(req,res){
 	//得到前端提交的email
 	// var form = new formidable.IncomingForm();
 	// form.parse(req , function(err , fields , files){
-		var mail=req.session.email
+		if(req.session.email){
+			var mail = req.session.email
+		}else{
+			return;
+		}
 		//检索数据库
 		User.find({"mail" : mail} , function(err , results){
 			
-			res.json({
+			res.json(err? 'no' : {
 				"mail" : results[0].mail ,
 				"name" : results[0].nickname ,
 				"introduction" : results[0].introduction ,

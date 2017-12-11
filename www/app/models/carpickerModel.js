@@ -1,6 +1,7 @@
 export default {
     namespace: "carpicker" , 
     state : {
+        "details" : [],
         "filter" : [] , 
         "results" : [],
         "amount" : 0 ,
@@ -10,6 +11,12 @@ export default {
         "sortDirec" : 1
     },
     reducers : {
+        init(state , action){
+			return{
+				...state,
+				"details" : action.result
+			}
+		},
         deltag_sync(state , action){
             return {
                 ...state , 
@@ -115,6 +122,11 @@ export default {
             const { page, pagesize } = yield select(state=>state.carpicker);
             const {results , amount} = yield fetch(`/api?page=${page}&pagesize=${pagesize}`).then(data=>data.json());
             yield put({ "type": "changeResult_sync", results, amount});
+        },
+        *fetchInit2(action , {put,select}){
+            const result = yield fetch('../app/result.json').then(data => data.json());
+			console.log(result)
+			yield put({'type' : 'init' , result})
         },
         *deltag(action , {put , select}){
             //在异步的effect中得到state，要使用select函数：

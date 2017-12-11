@@ -77,7 +77,7 @@ dynamic.setDefaultLoadingComponent(() => {
         <Router history={history}>
             <Switch>
                 <Route path="/user" render={props => <UserLayout {...props} {...passProps} />} />
-                <Route path="/" exact render={props => <BasicLayout {...props} {...passProps} />} />
+                <Route path="/"  render={props => <BasicLayout {...props} {...passProps} />} />
                 {/* <Route path="/api" exact component={Index} /> */}
             </Switch>
         </Router>

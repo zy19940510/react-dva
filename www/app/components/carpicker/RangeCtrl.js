@@ -20,13 +20,16 @@ class RangeCtrl extends Component {
         })[0];
         //默认值
         var value = [0,100];
-        if (_filter) {value = _filter.value }
-
+		if (_filter) {value = _filter.value }
+		var examples = []
+		if(this.props.data){
+			examples = this.props.data.example;
+		}
         return (
             <div className="range_ctrl_box">
                 <div className="examples">
                     {
-                        this.props.data.example.map((item, index) => {
+                       examples.map((item, index) => {
                             return <a 
                                 key={index} 
                                 href="javascript:void(0);" 
@@ -42,8 +45,6 @@ class RangeCtrl extends Component {
                        <Col span={14}>
                             <Slider 
                                 range 
-                                min={0} 
-                                max={100}
                                 value={value}
                                 onChange={([b, t]) => { this.clickHandeler(b,t)}}
                             />
@@ -52,9 +53,9 @@ class RangeCtrl extends Component {
                            
                         </Col>
                         <Col span={9}>
-                            {value[0]}  
+                            {this.props.value[0]}  
                             ~
-                            {value[1]}  
+                            {this.props.value[1]}  
                         </Col>
                    </Row>
                 </div>

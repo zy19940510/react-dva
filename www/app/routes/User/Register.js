@@ -227,9 +227,9 @@ class Register extends Component {
               </FormItem>
             </InputGroup>
           </FormItem>
-          {/* <FormItem>
+          <FormItem>
             <Row gutter={8}>
-              <Col span={24}>
+              <Col span={16}>
                 {getFieldDecorator('captcha', {
                   rules: [{
                     required: true, message: '请输入验证码！',
@@ -252,7 +252,7 @@ class Register extends Component {
                 </Button>
               </Col>
             </Row>
-          </FormItem> */}
+          </FormItem>
           <FormItem>
             <Button size="large" loading={register.submitting} className="submit" type="primary" htmlType="submit">
               注册

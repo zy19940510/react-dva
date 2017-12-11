@@ -8,11 +8,12 @@ const TabPane = Tabs.TabPane;
 
 class TabCtrl extends Component {
     constructor(props){
-        super();
+		super(props);
         
     }
 
     clickHandler(item){
+		// console.log(item)
         this.props.changebrand(item);
         this.props.addtag(this.props.tagname, item, item);
     }
@@ -22,17 +23,19 @@ class TabCtrl extends Component {
         var _filter = this.props.filter.filter((item)=>{
             return item.tagname == this.props.tagname;
         })[0];
-
-        if (_filter) {var value = _filter.value};
-
+		if (_filter) {var value = _filter.value};
+		var carbrands = []
+		if(this.props.data){
+			carbrands = this.props.data;
+		}
         return (
-            <div className="tab_ctrl_box">
+			<div className="tab_ctrl_box">
                 <Tabs defaultActiveKey="0" onChange={() => { }}>
                     {
-                        Object.keys(this.props.data).map((item,index)=>{
+                       Object.keys(carbrands).map((item,index)=>{
                             return <TabPane tab={item} key={index}>
                                 {
-                                    this.props.data[item].map((item,index)=>{
+                                    carbrands[item].map((item,index)=>{
                                         return <a 
                                             key={index} 
                                             href="javascript:void(0);"
@@ -42,7 +45,9 @@ class TabCtrl extends Component {
                                     })
                                 }
                             </TabPane>
-                        })
+						})
+						
+						
                     }
                 </Tabs>
             </div>
@@ -52,6 +57,6 @@ class TabCtrl extends Component {
 
 export default connect(
     ({carpicker}) => ({
-        filter : carpicker.filter
+		filter : carpicker.filter,
     })
 )(TabCtrl);

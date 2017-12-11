@@ -26,7 +26,9 @@ class AListCtrl extends Component {
         if (_filter) { var value = _filter.value };
 
         if (!this.props.data) return <div></div>
-
+		// let series = this.props.data
+		console.log(this.props.data)
+		// console.log(Object.keys(special))
         return (
             <div className="a_list_ctrl_box">
                 <Row>
@@ -46,10 +48,10 @@ class AListCtrl extends Component {
                         <a href="javascript:void(0);" onClick={() => { this.setState({ "showMore": !this.state.showMore }) }}>更多</a>
                     </Col>
                 </Row>
-                <Row>
-                    <Col span={22}>
-                        <div className="more_box" style={{ "display": this.state.showMore ? "block" : "none" }}>
-                            {
+                  <Row>
+                     <Col span={22}>
+                         <div className="more_box" style={{ "display": this.state.showMore ? "block" : "none" }}>
+                             {
                                 Object.keys(this.props.data.all).map((item, index) => {
                                     return <dl key={index}>
                                         <dt>{item}</dt>
@@ -70,7 +72,7 @@ class AListCtrl extends Component {
                             }
                         </div>
                     </Col>
-                </Row>
+                </Row> 
             </div>
         )
     }

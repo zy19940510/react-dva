@@ -36,8 +36,17 @@ class App extends React.Component {
         dataIndex: 'image',
         key: 'image',
         "render":  (a, record, c) => {
+			console.log(record.colorEnglish)
+			console.log(`/carimages/${record.directory}/${record.colorEnglish}
+			/view/${record.image}`)
           return <span onClick={() => { this.clickHandler(record.directory , record.colorEnglish)}}>
-              <img src={`/carimages/${record.directory}/${record.colorEnglish}/view/${record.image}`} width="70"/>
+		  {
+			  record.colorEnglish ?
+			   <img src={`/carimages/${record.directory}/${record.colorEnglish}/view/${record.image}`} width="70"/>
+			   : 
+			   null
+		  }
+             
             </span>
         }
       },

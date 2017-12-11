@@ -40,12 +40,12 @@ app.get("/api/currentUser" , infoctrl.checkoutInfo)
 // });
 app.get("/api/checklogin",function(req,res){
     var login = req.session.login;
-    console.log(login);
+    // console.log(login);
     if(!login){
-        console.log("请先登陆");
+        // console.log("请先登陆");
         res.json({"login" : "no"})
     }else{
-        console.log("denglule")
+        // console.log("denglule")
         res.json({"login" : "ok"})
     }
 });
@@ -76,7 +76,7 @@ app.get("/api" , function(req,res){
     var km = url.parse(req.url, true).query.km;
     var price = url.parse(req.url, true).query.price;
     var page = url.parse(req.url, true).query.page;
-    var pagesize = url.parse(req.url, true).query.pagesize;
+    var pagesize = url.parse(req.url, true).query.pagesize-0;
     var sortby = url.parse(req.url , true).query.sortby || "id";
     var sortDirec = url.parse(req.url, true).query.sortDirec || 1;
     
@@ -126,7 +126,7 @@ app.get("/api" , function(req,res){
         searchJSON["price"] = {"$gte" : price[0] , "$lte" : price[1]};
     }
 
-
+    // console.log(searchJSON)
     Car.count(searchJSON,function(err,amount){
         Car.find(searchJSON).sort({ [sortby]: sortDirec}).skip((page - 1) * pagesize).limit(pagesize).lean().exec((err,results)=>{
             res.json({"amount" : amount ,  "results" : results});

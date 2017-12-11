@@ -39,7 +39,12 @@ class SelectCtrl extends Component {
         var _filter = this.props.filter.filter((item) => {
             return item.tagname == this.props.tagname;
         })[0];
-
+		var color = [];
+		var colorOptions = [];
+		if(this.props.data){
+			color = this.props.data;
+			colorOptions = color.options;
+		}
 
         // //默认值
         var value = [];
@@ -47,9 +52,9 @@ class SelectCtrl extends Component {
         
         const showlist = () => {
             var ARR = [];
-            for (let i = 0; i < this.props.data.options.length / 6; i++) {
+            for (let i = 0; i < colorOptions.length / 6; i++) {
                 var temp = [];
-                let slice_arr = this.props.data.options.slice(i * 6, i * 6 + 6);
+                let slice_arr = colorOptions.slice(i * 6, i * 6 + 6);
                 for (let j = 0; j < slice_arr.length; j++) {
                     temp.push(
                     <li
@@ -72,11 +77,11 @@ class SelectCtrl extends Component {
                     className={classnames({ "hd": true, "open": this.state.showBd })}
                     onClick={() => { this.setState({ "showBd": !this.state.showBd }) }}
                 >
-                    {this.props.data.title}
+                    {color.title}
                 </div>
                 <div className="bd" style={{
                     "display": this.state.showBd ? "block" : "none",
-                    "width": Math.ceil(this.props.data.options.length / 6) * 80 + "px"
+                    "width": Math.ceil(colorOptions.length / 6) * 80 + "px"
                 }}>
                     {
                         showlist()

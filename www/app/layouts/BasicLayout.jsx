@@ -68,15 +68,18 @@ export class BasicLayout extends Component {
     return { location, breadcrumbNameMap };
   }
   componentWillReceiveProps(nextProps) {
-    // console.log(nextProps)
     if (nextProps.login._login != 'ok') {
       nextProps.dispatch(routerRedux.push('/user/login'));
+      // console.log('请先登陆')
     }
+    
   }
-  componentDidMount(){
+  componentWillMount(){
     this.props.dispatch({"type" : "login/checklogin"})
+    console.log(123);
     this.props.dispatch({"type" : 'user/fetchCurrent'});
   }
+  
   componentWillUnmount() {
     this.triggerResizeEvent.cancel();
   }
@@ -371,7 +374,7 @@ export class BasicLayout extends Component {
                     )
                   )
                 }
-                <Redirect exact from="/" to="/dashboard/analysis" />
+                {/* <Redirect exact from="/" to="/dashboard/analysis" /> */}
                 {/* <Route component={NotFound} /> */}
               </Switch>
             </div>

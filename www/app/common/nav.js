@@ -17,12 +17,12 @@ export const getNavData = app => [
     children: [
       {
         name: 'Dashboard',
-        icon: 'dashboard',
-        path: '',
+        icon: 'pie-chart',
+        path: 'dashboard',
         children: [
           {
             name: '分析页',
-            path: '/',
+            path: 'analysis',
             component: dynamicWrapper(app, [], () => import('../columns/index/Index.js')),
           },
           // {
@@ -37,38 +37,38 @@ export const getNavData = app => [
           // },
         ],
       },
-      // {
-      //   name: '表单页',
-      //   path: 'form',
-      //   icon: 'form',
-      //   children: [
-      //     {
-      //       name: '基础表单',
-      //       path: 'basic-form',
-      //       component: dynamicWrapper(app, ['form'], () => import('../routes/Forms/BasicForm')),
-      //     },
-      //     {
-      //       name: '分步表单',
-      //       path: 'step-form',
-      //       component: dynamicWrapper(app, ['form'], () => import('../routes/Forms/StepForm')),
-      //       children: [
-      //         {
-      //           path: 'confirm',
-      //           component: dynamicWrapper(app, ['form'], () => import('../routes/Forms/StepForm/Step2')),
-      //         },
-      //         {
-      //           path: 'result',
-      //           component: dynamicWrapper(app, ['form'], () => import('../routes/Forms/StepForm/Step3')),
-      //         },
-      //       ],
-      //     },
-      //     {
-      //       name: '高级表单',
-      //       path: 'advanced-form',
-      //       component: dynamicWrapper(app, ['form'], () => import('../routes/Forms/AdvancedForm')),
-      //     },
-      //   ],
-      // },
+      {
+        name: '业务管理',
+        path: 'business',
+        icon: 'global',
+        children: [
+          {
+            name: '汽车销售',
+            path: 'sell',
+            component: dynamicWrapper(app, ['carpickerModel','carshowModel'], () => import('../components/carpicker/index.js')),
+          },
+          {
+            name: '人员管理',
+            path: 'person',
+            component: dynamicWrapper(app, [], () => import('../columns/people/PeopleIndex.js')),
+            // children: [
+            //   {
+            //     path: 'confirm',
+            //     component: dynamicWrapper(app, ['form'], () => import('../routes/Forms/StepForm/Step2')),
+            //   },
+            //   {
+            //     path: 'result',
+            //     component: dynamicWrapper(app, ['form'], () => import('../routes/Forms/StepForm/Step3')),
+            //   },
+            // ],
+          },
+          {
+            name: '订单管理',
+            path: 'order',
+            component: dynamicWrapper(app, [], () => import('../columns/order/OrderIndex.js')),
+          },
+        ],
+      },
       // {
       //   name: '列表页',
       //   path: 'list',

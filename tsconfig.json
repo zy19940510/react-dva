@@ -1,9 +1,0 @@
-{  
-    "compilerOptions": {  
-        "module": "commonjs", 
-        "sourceMap": true  
-    },  
-    "files": [  
-        "./www/app/columns/User/Register.js"  
-   ]  
-}  
