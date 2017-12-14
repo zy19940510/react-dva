@@ -1,0 +1,2 @@
+个人理解，在添加标签，修改标签，删除标签异步中修改state中的filter然后再fetch数据不合理，因果倒置，同样的代码写了三次，state应该由reducer 修改，
+第一次在componentDidmount后拉取，fetch数据更新则应该由filter的变更触发，可在componentwillUpdate中监听filter是否更新，决定是否拉取数据
